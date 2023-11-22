@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { COLOR_MAP } from "../constants/colorMap";
+import { COLOR_MAP } from "../constants";
 
 const LegendItem = ({ label, color }) => (
   <div className="d-flex justify-center align-center expense-chart__legend-item">

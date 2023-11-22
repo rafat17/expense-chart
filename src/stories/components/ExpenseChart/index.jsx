@@ -44,7 +44,7 @@ ExpenseChart.propTypes = {
       [PropTypes.string]: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,
-      ]).isRequired,
+      ]),
     })
   ),
   locale: PropTypes.string,

@@ -1,20 +1,20 @@
 import PropTypes from "prop-types";
 import Amount from "./Amount";
 import {
-  getTotalExpensesInFloat,
-  getItemAmountInDegrees,
+  getTotalAmountInFloat,
+  getItemsWithStartEndDegrees,
   getConicGradientString,
 } from "../helpers/chartItem";
 
 const ChartItem = ({ item, locale, currency }) => {
   const itemValues = Object.values(item);
   const itemWithNumbersOnly = itemValues.filter((item) => !isNaN(item));
-  const totalExpenses = getTotalExpensesInFloat(itemWithNumbersOnly);
-  const itemsWithStartEndDeg = getItemAmountInDegrees(
+  const totalAmount = getTotalAmountInFloat(itemWithNumbersOnly);
+  const itemsWithStartEndDegrees = getItemsWithStartEndDegrees(
     itemWithNumbersOnly,
-    totalExpenses
+    totalAmount
   );
-  const conicGradientString = getConicGradientString(itemsWithStartEndDeg);
+  const conicGradientString = getConicGradientString(itemsWithStartEndDegrees);
 
   return (
     <div
@@ -23,7 +23,7 @@ const ChartItem = ({ item, locale, currency }) => {
       }}
       className="expense-chart__chart-item expense-chart__chart-item--outer-circle"
     >
-      <Amount lcoale={locale} currency={currency} amount={totalExpenses} />
+      <Amount lcoale={locale} currency={currency} amount={totalAmount} />
     </div>
   );
 };
