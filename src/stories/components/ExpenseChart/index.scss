@@ -1,0 +1,129 @@
+@import "../../styles/global";
+@import "../../styles/flex-helpers";
+@import "../../styles/variables";
+@import "../../styles/mixins/responsive-layout";
+
+.expense-chart {
+  &__card {
+    border-radius: 40px;
+    row-gap: 42px;
+    padding: 32px 0;
+  }
+
+  &__tab-content {
+    row-gap: 28px;
+  }
+
+  &__tab-navigator {
+    background: $cultured;
+    border-radius: 30px;
+    padding: 12px 32px;
+    width: 100%;
+
+    @include viewport-is(tab-mobile) {
+      flex-direction: column;
+      padding: 12px;
+      width: unset;
+    }
+  }
+
+  &__tab-navigator-item {
+    background: transparent;
+    border: none;
+    border-radius: 16px;
+    color: $dark-grey;
+    font-weight: $bold-font-weight;
+    padding: 8px 10px;
+
+    &,
+    &--active {
+      font-size: $font-12;
+    }
+
+    &--active {
+      color: blue;
+      background: $white;
+    }
+  }
+
+  &__chart-item {
+    border-radius: 50%;
+    min-height: 264px;
+    min-width: 264px;
+
+    @include viewport-is(mobile) {
+      min-height: 236px;
+      min-width: 236px;
+    }
+
+    &--outer-circle {
+      padding: 24px;
+
+      @include viewport-is(mobile) {
+        padding: 20px;
+      }
+    }
+
+    &--inner-circle {
+      height: 100%;
+      width: 100%;
+      background: $white;
+    }
+
+    &--currency-amount,
+    &--currency-fractions {
+      font-weight: $font-weight-700;
+    }
+
+    &--currency-amount {
+      font-size: $font-40;
+
+      @include viewport-is(mobile) {
+        font-size: 32px;
+      }
+    }
+
+    &--amount-fractions {
+      color: $maximum-blue-purple;
+      font-size: $font-19;
+      margin-top: 16px;
+
+      @include viewport-is(mobile) {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  &__legends {
+    column-gap: 20px;
+
+    @include viewport-is(tab-mobile) {
+      align-items: self-start;
+      row-gap: 4px;
+      flex-direction: column;
+    }
+  }
+
+  &__legend-item {
+    column-gap: 12px;
+  }
+
+  &__legend {
+    &--color {
+      border-radius: 33px;
+      height: 13px;
+      width: 37px;
+    }
+
+    &--label {
+      color: $deep-amethyst;
+      font-size: $font-16;
+      font-weight: $bolder-font-weight;
+      text-transform: capitalize;
+
+      @include viewport-is(mobile) {
+        font-size: $font-14;
+      }
+    }
+  }
+}
