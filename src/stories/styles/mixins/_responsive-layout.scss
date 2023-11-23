@@ -1,0 +1,37 @@
+$small-mobile: 360px;
+$mobile: 480px;
+$tab-mobile: 767px;
+$desktop-tab: 991px;
+$large-desktop: 1200px;
+
+@mixin viewport-is($breakpoint) {
+  @if $breakpoint == large-desktop {
+    @media only screen and (max-width: $large-desktop) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-tab {
+    @media only screen and (max-width: $desktop-tab) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == tab-mobile {
+    @media only screen and (max-width: $tab-mobile) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == mobile {
+    @media only screen and (max-width: $mobile) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == small-mobile {
+    @media only screen and (max-width: $small-mobile) {
+      @content;
+    }
+  }
+}
