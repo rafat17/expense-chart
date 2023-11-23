@@ -17,9 +17,3 @@ export const Primary = {
     height: "545px",
   },
 };
-
-export const Secondary = {
-  args: {
-    label: "ExpensesTab",
-  },
-};
