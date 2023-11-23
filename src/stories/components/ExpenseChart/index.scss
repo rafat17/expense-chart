@@ -58,6 +58,7 @@
 
     &--outer-circle {
       padding: 24px;
+      transform: rotate(-180deg);
 
       @include viewport-is(mobile) {
         padding: 20px;
@@ -65,9 +66,10 @@
     }
 
     &--inner-circle {
-      height: 100%;
-      width: 100%;
       background: $white;
+      height: 100%;
+      transform: rotate(-180deg);
+      width: 100%;
     }
 
     &--currency-amount,

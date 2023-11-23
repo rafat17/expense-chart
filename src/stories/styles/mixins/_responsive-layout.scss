@@ -29,7 +29,7 @@ $large-desktop: 1200px;
     }
   }
 
-  @if breakpoint == small-mobile {
+  @if $breakpoint == small-mobile {
     @media only screen and (max-width: $small-mobile) {
       @content;
     }

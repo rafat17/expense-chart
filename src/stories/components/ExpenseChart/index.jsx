@@ -5,7 +5,7 @@ import { INVALID_ITEM_SHAPE, NO_ITEMS_FOUND, TIME_PERIOD } from "./constants";
 import "./index.scss";
 
 const getLegendLabels = (data) => {
-  if (Array.isArray(data) && data.length > 0 && data.length < 5) {
+  if (data.length > 0) {
     const singleItem = data[0];
 
     return Object.keys(singleItem).filter((item) => item !== TIME_PERIOD);
@@ -15,7 +15,7 @@ const getLegendLabels = (data) => {
 };
 
 const ExpenseChart = ({ width, height, data, locale, currency }) => {
-  if (data.length === 0) {
+  if (!Array.isArray(data) || data.length === 0) {
     return NO_ITEMS_FOUND;
   }
 
